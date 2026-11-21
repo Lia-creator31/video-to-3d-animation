@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- The 3D garden lives in `src/lib/garden-scene.ts` as vanilla three.js, loaded via dynamic import from a client-only effect — keeps three.js out of SSR and avoids react-three-fiber overhead.
+- Scene artwork is layered transparent cutouts (webp in `src/assets`) placed at depths in 3D; regenerate cutouts with transparent backgrounds (chroma-key for subjects with white clothing) rather than painting geometry.
